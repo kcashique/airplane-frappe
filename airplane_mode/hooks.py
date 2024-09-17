@@ -242,3 +242,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+doc_events = {
+    "Airplane Ticket": {
+        "before_submit": "airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.prevent_submission"
+    }
+}
