@@ -24,7 +24,8 @@
   "departure_time",
   "column_break_rpqh",
   "duration_of_flight",
-  "amended_from"
+  "amended_from",
+  "ticket_summary"
  ],
  "fields": [
   {
@@ -144,12 +145,17 @@
    "fieldtype": "Data",
    "label": "Seat",
    "read_only": 1
+  },
+  {
+   "fieldname": "ticket_summary",
+   "fieldtype": "Data",
+   "label": "Ticket summary"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-13 16:35:24.468259",
+ "modified": "2024-09-17 21:54:59.397658",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
