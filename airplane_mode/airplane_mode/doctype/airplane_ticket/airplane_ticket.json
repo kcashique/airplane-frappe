@@ -25,7 +25,8 @@
   "column_break_rpqh",
   "duration_of_flight",
   "amended_from",
-  "ticket_summary"
+  "ticket_summary",
+  "workflow_state"
  ],
  "fields": [
   {
@@ -98,8 +99,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Booked\nChecked-In\nBoarded",
-   "reqd": 1
+   "options": "Booked\nChecked-In\nBoarded"
   },
   {
    "fieldname": "amended_from",
@@ -150,12 +150,19 @@
    "fieldname": "ticket_summary",
    "fieldtype": "Data",
    "label": "Ticket summary"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Workflow State"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-17 21:54:59.397658",
+ "modified": "2024-09-22 01:29:54.655506",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -171,6 +178,17 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
    "share": 1,
    "write": 1
   }
