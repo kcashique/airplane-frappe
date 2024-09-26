@@ -20,6 +20,13 @@ class AirplaneTicket(Document):
 
 		# Setting the seat field name
 		self.seat = f"{formatted_number}{random_letter}" 
+		flight_doc = frappe.get_doc("Airplane Flight", self.flight)
+		airplane_doc = frappe.get_doc("Airplane", flight_doc.airplane)
+
+		ticket_count = frappe.db.count("Airplane Ticket", {"flight": self.flight})
+
+		if ticket_count >= airplane_doc.capacity:
+			frappe.throw(_("Cannot create a new ticket. The airplane capacity of {0} seats has been reached.").format(airplane_doc.capacity))
 
 	
 	def validate(self):
