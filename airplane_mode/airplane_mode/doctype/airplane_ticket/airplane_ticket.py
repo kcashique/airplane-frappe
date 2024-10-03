@@ -20,6 +20,8 @@ class AirplaneTicket(Document):
 
 		# Setting the seat field name
 		self.seat = f"{formatted_number}{random_letter}" 
+
+		#Counting the ticket
 		flight_doc = frappe.get_doc("Airplane Flight", self.flight)
 		airplane_doc = frappe.get_doc("Airplane", flight_doc.airplane)
 
@@ -44,8 +46,8 @@ class AirplaneTicket(Document):
 		total_add_on_amount = sum([addon.amount for addon in self.add_ons])
 		self.total_amount = self.flight_price + total_add_on_amount
 	
-	def before_submit(self):
-		# Prevent submission if status is not 'Boarded'
-		if self.status != "Boarded":
-			# Raise error to prevent submission
-			frappe.throw(_("You cannot submit this ticket unless the status is 'Boarded'"))
+	# def before_submit(self):
+	# 	# Prevent submission if status is not 'Boarded'
+	# 	if self.status != "Boarded":
+	# 		# Raise error to prevent submission
+	# 		frappe.throw(_("You cannot submit this ticket unless the status is 'Boarded'"))
