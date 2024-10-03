@@ -26,7 +26,7 @@
   "duration_of_flight",
   "amended_from",
   "ticket_summary",
-  "workflow_state"
+  "workflow_state_field"
  ],
  "fields": [
   {
@@ -153,7 +153,7 @@
   },
   {
    "allow_on_submit": 1,
-   "fieldname": "workflow_state",
+   "fieldname": "workflow_state_field",
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Workflow State"
@@ -162,7 +162,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-01 15:23:44.519883",
+ "modified": "2024-10-03 11:59:49.881714",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -226,6 +226,19 @@
    "report": 1,
    "role": "Flight Crew Member",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
